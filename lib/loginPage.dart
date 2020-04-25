@@ -56,7 +56,9 @@ class LoginPage extends StatelessWidget {
             ],
           ),
 
-          )
+          ),
+          SizedBox(height: 70.0),
+          Text('© Derechos Reservados 2020, GestMas')
 
         ],
       ),
@@ -133,28 +135,22 @@ class LoginPage extends StatelessWidget {
       ),
     );
 
-    final circulo = Container(
-      width: 100.0,
-      height: 100.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(100.0),
-        color: Color.fromRGBO(255, 255, 255, 0.10),
-      ),
-    );
+
 
   return Stack(
     children: <Widget>[
       fondoAzul,
-      Positioned(top: -10.0, left: 30.0, child: circulo),
-      Positioned(top: 150.0, left: 180.0, child: circulo),
-      Positioned(bottom: -50.0, left: -10.0, child: circulo),
-      Positioned(bottom: -60.0, left: 200.0, child: circulo),
+      //Positioned(top: -10.0, left: 30.0, child: circulo),
+      //Positioned(top: 150.0, left: 180.0, child: circulo),
+      //Positioned(bottom: -50.0, left: -10.0, child: circulo),
+      //Positioned(bottom: -60.0, left: 200.0, child: circulo),
 
       Container(
         padding: EdgeInsets.only(top: 80.0),
         child: Column(
           children: <Widget>[
-            Icon( Icons.school, color: Colors.black, size: 100.0 ),
+            //Icon( Icons.school, color: Colors.black, size: 100.0 ),
+            Image.asset('assets/images/LogoGes.png',height: 100,),
             SizedBox( height: 10.0, width: double.infinity,),
             Text('GestMas', style: TextStyle( color: Colors.black, fontSize: 25.0, fontWeight: FontWeight.bold),)
           ],
