@@ -1,6 +1,6 @@
 # gestmas
 
-A new Flutter project.
+GestMas es una aplicación que Gestiona el proceso de las escuelas.
 
 ## Getting Started
 

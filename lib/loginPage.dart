@@ -1,4 +1,9 @@
+
+
+
+
 import 'package:flutter/material.dart';
+import 'package:gestmas/homePage.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -46,13 +51,13 @@ class LoginPage extends StatelessWidget {
 
           child: Column(
             children: <Widget>[
-              Text('Ingreso', style: TextStyle( fontSize: 20.0, fontWeight: FontWeight.bold),),
+              Text('Ingrese sus credenciales', style: TextStyle( fontSize: 20.0, fontWeight: FontWeight.bold),),
               SizedBox( height: 60.0 ),
               _loginUsuario(),
               SizedBox( height: 30.0,),
               _loginPassword(),
               SizedBox( height: 30.0,),
-              _loginBoton(),
+              _loginBoton(context),
             ],
           ),
 
@@ -101,7 +106,7 @@ class LoginPage extends StatelessWidget {
 
   }
 
-  Widget _loginBoton(){
+  Widget _loginBoton(BuildContext context){
 
     return RaisedButton(
       child: Container(
@@ -112,7 +117,12 @@ class LoginPage extends StatelessWidget {
       
       color: Colors.blueAccent,
       textColor: Colors.white,
-      onPressed: (){},
+      onPressed: (){
+       
+        Navigator.push(
+          context, 
+          MaterialPageRoute(builder: (context) => HomePage()));
+      }
     );
 
   }

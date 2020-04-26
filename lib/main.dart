@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gestmas/homePage.dart';
 import 'loginPage.dart';
 
 void main() => runApp(MyApp());
@@ -10,17 +11,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'GestMas',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        buttonTheme: ButtonThemeData(height: 40),
-        textTheme: TextTheme(
-          button: TextStyle(
-            fontSize: 21,
-            color: Colors.white,
-          )
-        )
-      ),
-      home: LoginPage(),
+
+      // AQUI DEBEN AGREGAR LAS RUTAS
+      initialRoute: 'login',
+      routes: {
+        'login'  : (BuildContext context) => LoginPage(),
+        'home'   : (BuildContext context) => HomePage(),   
+      },
+
     );
   }
 }
