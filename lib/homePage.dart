@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Inicio'),),
+      appBar: AppBar(title: Text('Inicio'), centerTitle: true,),
       body: Stack(
         children: <Widget>[
             _fondoApp(),
@@ -115,12 +115,12 @@ child: BottomNavigationBar(
     ),
 
     BottomNavigationBarItem(
-      icon: Icon( Icons.school, size: 30.0 ),
+      icon: Icon( Icons.assistant, size: 30.0 ),
       title: Container()
     ),
 
     BottomNavigationBarItem(
-      icon: Icon( Icons.person, size: 30.0 ),
+      icon: Icon( Icons.note_add, size: 30.0 ),
       title: Container()
     ),
   ],
@@ -137,7 +137,7 @@ child: BottomNavigationBar(
       children: [
         TableRow(
           children: [
-            _crearBotonRedondeado( Colors.white, Icons.border_all, 'Asistencia' ),
+            _crearBotonRedondeado( Colors.white, Icons.assistant, 'Asistencia' ),
             _crearBotonRedondeado( Colors.white, Icons.note_add, 'Nota'),
           ]
         ),

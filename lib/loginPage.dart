@@ -3,6 +3,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:gestmas/animacionLogo.dart';
 import 'package:gestmas/homePage.dart';
 
 class LoginPage extends StatelessWidget {
@@ -121,7 +122,7 @@ class LoginPage extends StatelessWidget {
        
         Navigator.push(
           context, 
-          MaterialPageRoute(builder: (context) => HomePage()));
+          MaterialPageRoute(builder: (context) => AnimacionPage()));
       }
     );
 

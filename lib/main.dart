@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gestmas/animacionLogo.dart';
 import 'package:gestmas/homePage.dart';
 import 'loginPage.dart';
 
@@ -15,8 +16,9 @@ class MyApp extends StatelessWidget {
       // AQUI DEBEN AGREGAR LAS RUTAS
       initialRoute: 'login',
       routes: {
-        'login'  : (BuildContext context) => LoginPage(),
-        'home'   : (BuildContext context) => HomePage(),   
+        'login'     : (BuildContext context) => LoginPage(),
+        'home'      : (BuildContext context) => HomePage(),   
+        'animacion' : (BuildContext context) => AnimacionPage(),
       },
 
     );
