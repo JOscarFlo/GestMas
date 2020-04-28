@@ -19,8 +19,7 @@ class GrupoPage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 _titulos(),
-                _botonesRed(),
-                boton(context),
+                _botonesRed(context),
               ],
             )    
           )
@@ -72,76 +71,382 @@ class GrupoPage extends StatelessWidget {
     );
   }
 
-  Widget _botonesRed(){
+  Widget _botonesRed(context){
     return Table(
-
+      
       children: [
         TableRow(
           children:[
-            _crearSelector( Colors.orange, Icons.border_all, 'Este grado', ),
-            _crearSelector( Colors.orange, Icons.border_all, 'Este grado', ),
-          ]
-        ),
-      ],
+            _crearBoton1( context, Colors.white, Icons.person_add, '1 Grado' ),
+            _crearBoton2( context, Colors.white, Icons.person_add, '2 Grado' ),
+          ]),
+          TableRow(
+            children:[
 
+          ]),
+          TableRow(
+            children:[
+            _crearBoton3( context, Colors.white, Icons.person_add, '3 Grado' ),
+            _crearBoton4( context, Colors.white, Icons.person_add, '4 Grado' ),
+          ]),
+          TableRow(
+            children:[
+            _crearBoton5( context, Colors.white, Icons.person_add, '5 Grado' ),
+            _crearBoton6( context, Colors.white, Icons.person_add, '6 Grado' ),
+          ]),
+      ]
     );
-
   }
 
-  Widget boton(BuildContext context) {
-      return Material(
-      color: Colors.white,
-      child: Center(
-        child: Ink(
-          decoration: const ShapeDecoration(
-            color: Colors.lightBlue,
-            shape: CircleBorder(),
-          ),
-          child: IconButton(
-            icon: Icon(Icons.android),
-            color: Colors.white,
-            onPressed: () {
 
-              Navigator.push(
-            context, 
-            MaterialPageRoute(builder: (context) => Asistencia()));
-
-            },
+  Widget _crearBoton1( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
           ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Asistencia())
+                      );
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
+        ),
+      ),
+    );
+  }
+  Widget _crearBoton2( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Asistencia())
+                      );
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
+        ),
+      ),
+    );
+  }
+  Widget _crearBoton3( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Asistencia())
+                      );
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
+        ),
+      ),
+    );
+  }
+  Widget _crearBoton4( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Asistencia())
+                      );
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
+        ),
+      ),
+    );
+  }
+  Widget _crearBoton5( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Asistencia())
+                      );
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
+        ),
+      ),
+    );
+  }
+  Widget _crearBoton6( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Asistencia())
+                      );
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
+        ),
+      ),
+    );
+  }
+  Widget _crearBoton7( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Asistencia())
+                      );
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
+        ),
+      ),
+    );
+  }
+  Widget _crearBoton8( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Asistencia())
+                      );
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
+        ),
+      ),
+    );
+  }
+  Widget _crearBoton9( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Asistencia())
+                      );
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
         ),
       ),
     );
   }
 
-  Widget _crearSelector(Color color, IconData icono, String texto){
-    return ClipRRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX:3,sigmaY:3),
-        child: Container(
-          height: 150.0,
-          margin: EdgeInsets.all(20.0),
-          decoration: BoxDecoration(
-            color: Color.fromRGBO(62, 66, 107, 0.7),
-            borderRadius: BorderRadius.circular(29.0),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              SizedBox(height: 5.0,),
-              CircleAvatar(
-                backgroundColor: color,
-                radius: 35.0,
-                child: 
-                Icon (icono, color: Colors.white, size: 30.0,),
-              ),
-              Text(texto, style: TextStyle(color: Colors.pinkAccent),),
-              SizedBox(height: 5.0,),
-            ],
-          ),
-        ),
-        ),
-    );
-  }
+
+
+
+
+
 
   Widget _fondoApp1(){
     final gradiente = Container(

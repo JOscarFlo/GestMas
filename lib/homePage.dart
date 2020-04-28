@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:gestmas/SelecctGrupo.dart';
 import 'package:gestmas/materias.dart';
 
 
@@ -144,8 +144,8 @@ child: BottomNavigationBar(
         TableRow(
           children: [
             
-            _crearBotonRedondeado( context, Colors.white, Icons.person_add, 'Asistencia' ),
-            _crearBotonRedondeado( context, Colors.white, Icons.note_add, 'Nota'),
+            _crearBotonAsistencia( context, Colors.white, Icons.person_add, 'Asistencia' ),
+            _crearBotonNotas( context, Colors.white, Icons.note_add, 'Nota'),
             
           ]
         ),
@@ -159,7 +159,50 @@ child: BottomNavigationBar(
 
   
 
-  Widget _crearBotonRedondeado( BuildContext context, Color color, IconData icono, String texto ) {
+  Widget _crearBotonAsistencia( BuildContext context, Color color, IconData icono, String texto ) {
+    return ClipRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
+        child: Container(
+          height: 180.0,
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
+            borderRadius: BorderRadius.circular(30.0)
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+            
+              SizedBox( height: 12.0 ),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 45.0,
+                child: IconButton(
+                  
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                    
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => GrupoPage())
+                      );
+
+                  },
+                )
+              ),
+              Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
+              SizedBox( height: 5.0 )
+            ],
+
+          ),
+ 
+        ),
+      ),
+    );
+  }
+
+    Widget _crearBotonNotas( BuildContext context, Color color, IconData icono, String texto ) {
     return ClipRect(
       child: BackdropFilter(
         filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),

@@ -2,10 +2,15 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class Asistencia extends StatelessWidget {
-  
-  bool asistio = false;
-  bool permiso = false;
+
+class Asistencia extends StatefulWidget {
+  @override
+  _AsistenciaState createState() => _AsistenciaState();
+}
+
+class _AsistenciaState extends State<Asistencia> {
+    List<String> _estados = ['Asistio','No Asistio', 'Permiso'];
+  String _selectedOpt = 'Asistio';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +56,6 @@ class Asistencia extends StatelessWidget {
     );
 
   }
-
   Widget _titulos(){
     return SafeArea(
       child: Container(
@@ -61,7 +65,7 @@ class Asistencia extends StatelessWidget {
           children: <Widget>[
             Text('Lista de asistecia',style: TextStyle(color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.bold)),
             SizedBox(height: 10.0,),
-            Text('Para marcar la asistencia o permiso, marque en la columna correspondiente. Si no asistio, deje en blanco',style: TextStyle(color: Colors.black, fontSize: 12.5, fontWeight: FontWeight.bold)),
+            Text('Para marcar la asistencia o permiso, Seleccrione la opción correspondiente',style: TextStyle(color: Colors.black, fontSize: 12.5, fontWeight: FontWeight.bold)),
           ],
         ),
       ),
@@ -81,11 +85,11 @@ class Asistencia extends StatelessWidget {
     BottomNavigationBar(
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.assignment, size: 30.0,),
+          icon: Icon(Icons.home, size: 30.0,),
           title: Container(),
         ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school, size: 30.0,),
+            icon: Icon(Icons.check, size: 30.0,),
             title: Container(),
           ),
       ],
@@ -93,26 +97,7 @@ class Asistencia extends StatelessWidget {
     );
   }
 
-  Widget _switchA(){
-    return Container(
-      child: CheckboxListTile(
-        value: asistio,
-        onChanged: (valor){
-        },
-        
-      ),
-     
-    );
-  }
-  Widget _switchP(){
-    return Container(
-      child: CheckboxListTile(
-        value: permiso,
-        onChanged: (valor){
-        },
-      ),
-    );
-  }
+
 
 
   Widget _listadoAlumno(){
@@ -120,8 +105,7 @@ class Asistencia extends StatelessWidget {
       children:[
         TableRow(children: [
           _crearR('Anita Clara Yema Ortiz'),
-        _switchA(),
-        _switchP(),
+          _crearDD(),//aca va el select
         ]
         ),
         
@@ -130,27 +114,55 @@ class Asistencia extends StatelessWidget {
   }
 
 
+//Crear lista de opciones para el select
+  List<DropdownMenuItem<String>> getOpcionesDD() {
+
+    List<DropdownMenuItem<String>> lista = new List();
+
+    _estados.forEach((estado) {
+      lista.add(DropdownMenuItem(
+        child: Text(estado),
+        value: estado,
+      ));
+    });
+
+    return lista;
+  }
+
+
+  //Select
+  Widget _crearDD(){
+
+    return DropdownButton(
+      value: _selectedOpt,
+      items: getOpcionesDD(),
+      onChanged: (option){
+        setState(() {
+           _selectedOpt = option;
+        });
+      },
+    );
+  }
   Widget _crearR(String texto,){
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
-      _tableBG(),
-        Text(texto, style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold ),),
+         _tableBG(),
+         Text(texto, style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold ),),
       ],
     );
   }
-
 //box decoration
-Widget _tableBG(){
-  return Container(
-    height: 25.0,
-    /*decoration: BoxDecoration(
+  Widget _tableBG(){
+    return Container(
+      height: 25.0,
+      /*decoration: BoxDecoration(
       color: Color.fromRGBO(62, 66, 107, 0.8,), 
       borderRadius: BorderRadius.circular(10), 
-    )*/
-  );
-}
-
+      )*/
+    );
+  }
+  
 //FONDO DISEÑO
   Widget _fondoApp1(){
     final gradiente = Container(
@@ -167,25 +179,23 @@ Widget _tableBG(){
         )
       ),
     );
-
     final cajaRosa = Transform.rotate(
       angle: -pi / -9,
-      child: Container(
+      child: Container( 
         height: 400.0,
         width: 400.0,
         decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(0.0),
-        gradient: LinearGradient(
-          colors: [
-            
-            Color.fromRGBO(88, 137, 178, 1.0),
-            Color.fromRGBO(150, 179, 247, 1),
-          ],
-        ),
+          borderRadius: BorderRadius.circular(0.0),
+          gradient: LinearGradient(
+            colors: [
+                            
+              Color.fromRGBO(88, 137, 178, 1.0),
+              Color.fromRGBO(150, 179, 247, 1),
+            ],
+          ),
         ),
       ),
     );
-
     return Stack(
       children: <Widget>[
         gradiente,
@@ -193,12 +203,11 @@ Widget _tableBG(){
           top: 550.0,
           child: cajaRosa,
         ),
-      ],
-    );
-  }
-
-  Widget _fondoApp(){
-
+        ],
+        );
+        }
+                
+  Widget _fondoApp(){       
     final cajaRosa = Transform.rotate(
       angle: -pi / -8.0,
       child: Container(
@@ -208,7 +217,6 @@ Widget _tableBG(){
         borderRadius: BorderRadius.circular(0.0),
         gradient: LinearGradient(
           colors: [
-            
             Color.fromRGBO(150, 179, 247, 1.0),
             Color.fromRGBO(88, 137, 178, 1.0),
           ],
@@ -216,7 +224,6 @@ Widget _tableBG(){
         ),
       ),
     );
-
     return Stack(
       children: <Widget>[
         Positioned(
@@ -225,6 +232,5 @@ Widget _tableBG(){
         ),
       ],
     );
-  }
-
+  } 
 }
