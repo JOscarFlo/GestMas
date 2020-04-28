@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:gestmas/materias.dart';
+import 'package:gestmas/materiasPage.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -187,7 +187,7 @@ child: BottomNavigationBar(
                     
                       Navigator.push(
                         context, 
-                        MaterialPageRoute(builder: (context) => Materias())
+                        MaterialPageRoute(builder: (context) => MateriasPage())
                       );
 
                   },

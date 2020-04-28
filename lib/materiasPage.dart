@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:ui';
 
-class Materias extends StatelessWidget {
+class MateriasPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,9 +84,9 @@ class Materias extends StatelessWidget {
   Widget _bottonNavigationBar(BuildContext context){
     return Theme(
       data: Theme.of(context).copyWith(
-        canvasColor: Color.fromRGBO(55, 57, 84, 10),
+        canvasColor: Color.fromRGBO(41, 39, 45, 1.0),
         primaryColor: Colors.lightBlueAccent,
-        textTheme: Theme.of(context).textTheme.copyWith(caption: TextStyle(color: Color.fromRGBO(116, 117, 152, 1.0)))
+        textTheme: Theme.of(context).textTheme.copyWith(caption: TextStyle(color: Color.fromRGBO(255, 255, 255, 1.0)))
       ),
       child: BottomNavigationBar(
         items: [
