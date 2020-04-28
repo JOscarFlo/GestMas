@@ -3,8 +3,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:gestmas/animacionLogo.dart';
 import 'package:gestmas/homePage.dart';
+
 
 class LoginPage extends StatelessWidget {
   @override

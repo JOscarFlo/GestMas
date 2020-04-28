@@ -2,6 +2,8 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:gestmas/materias.dart';
+
 
 class HomePage extends StatelessWidget {
 
@@ -18,7 +20,8 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   _titulos(),
-                  _botonesRedondeados(),
+                  _botonesRedondeados(context),
+
                 ],
               ),
             )
@@ -40,7 +43,7 @@ class HomePage extends StatelessWidget {
           end: FractionalOffset(0.0, 1.0),
           colors: [
             Color.fromRGBO(255, 255, 255, 1.0),
-            Color.fromRGBO(88, 137, 178, 1.0),
+            Color.fromRGBO(255, 255, 255, 1.0),
           ]
         )
       ),
@@ -111,14 +114,17 @@ child: BottomNavigationBar(
   items: [
     BottomNavigationBarItem(
       icon: Icon( Icons.home, size: 30.0 ),
+      
       title: Container()
+      
+      
     ),
 
     BottomNavigationBarItem(
       icon: Icon( Icons.assistant, size: 30.0 ),
       title: Container()
     ),
-
+      
     BottomNavigationBarItem(
       icon: Icon( Icons.note_add, size: 30.0 ),
       title: Container()
@@ -131,14 +137,16 @@ child: BottomNavigationBar(
   }
 
 
-  Widget _botonesRedondeados(){
+  Widget _botonesRedondeados(context){
 
     return Table(
       children: [
         TableRow(
           children: [
-            _crearBotonRedondeado( Colors.white, Icons.assistant, 'Asistencia' ),
-            _crearBotonRedondeado( Colors.white, Icons.note_add, 'Nota'),
+            
+            _crearBotonRedondeado( context, Colors.white, Icons.person_add, 'Asistencia' ),
+            _crearBotonRedondeado( context, Colors.white, Icons.note_add, 'Nota'),
+            
           ]
         ),
         
@@ -151,7 +159,7 @@ child: BottomNavigationBar(
 
   
 
-  Widget _crearBotonRedondeado( Color color, IconData icono, String texto ) {
+  Widget _crearBotonRedondeado( BuildContext context, Color color, IconData icono, String texto ) {
  
  
     return ClipRect(
@@ -167,16 +175,28 @@ child: BottomNavigationBar(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              
+            
               SizedBox( height: 12.0 ),
               CircleAvatar(
                 backgroundColor: color,
                 radius: 45.0,
-                child: Icon( icono, color: Colors.blueAccent, size: 70.0 ),
+                child: IconButton(
+                  
+                  icon: Icon(icono, size: 50.0,),
+                  onPressed: (){
+                    
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => Materias())
+                      );
+
+                  },
+                )
               ),
               Text( texto , style: TextStyle( color: Colors.white, fontSize: 25.0 )),
               SizedBox( height: 5.0 )
             ],
+
           ),
  
         ),
@@ -184,6 +204,9 @@ child: BottomNavigationBar(
     );
   }
 
-
-
+  
 }
+
+
+
+

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 
-class Notas extends StatelessWidget {
+class NotasPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Inicio'), centerTitle: true,),
+      appBar: AppBar(title: Text('Notas'), centerTitle: true,),
      body: SingleChildScrollView(
         child: Column(
           children: <Widget>[ 
@@ -191,27 +191,6 @@ class Notas extends StatelessWidget {
         );
      }
 
-      Widget _fondApp(){
-      final gradiente = Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration :BoxDecoration(
-          gradient: LinearGradient(
-              begin:FractionalOffset(0.0, 0.6),
-              end: FractionalOffset(0.0, 1.0),
-              colors: [
-                Color.fromRGBO(255, 255, 255, 1.0),
-                Color.fromRGBO(88, 137, 200, 1.0)
-              ]
-            )
-          ),
-        );
-    return Stack(
-      children: <Widget>[
-        gradiente,
-      ],
-    );
-  }
     Widget _bottonNavigationBar(BuildContext context){
       return Theme(
         data: Theme.of(context).copyWith(
