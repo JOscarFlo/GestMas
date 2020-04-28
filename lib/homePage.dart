@@ -160,8 +160,6 @@ child: BottomNavigationBar(
   
 
   Widget _crearBotonRedondeado( BuildContext context, Color color, IconData icono, String texto ) {
- 
- 
     return ClipRect(
       child: BackdropFilter(
         filter: ImageFilter.blur( sigmaX: 10.0, sigmaY: 10.0 ),
@@ -169,7 +167,7 @@ child: BottomNavigationBar(
           height: 180.0,
           margin: EdgeInsets.all(15.0),
           decoration: BoxDecoration(
-            color: Color.fromRGBO(0, 0, 0, 0.7),
+            color: Color.fromRGBO(88, 137, 178, 0.7), //ACA SE LE CAMBIA EL COLOR AL FONDO
             borderRadius: BorderRadius.circular(30.0)
           ),
           child: Column(
@@ -203,7 +201,6 @@ child: BottomNavigationBar(
       ),
     );
   }
-
   
 }
 
