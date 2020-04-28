@@ -1,8 +1,12 @@
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:gestmas/SelecctGrupo.dart';
 import 'package:gestmas/materias.dart';
+=======
+import 'package:gestmas/materiasPage.dart';
+>>>>>>> d3f3014f0f6d543ed34c2dce4a301c5fcf34d2b8
 
 
 class HomePage extends StatelessWidget {
@@ -228,7 +232,7 @@ child: BottomNavigationBar(
                     
                       Navigator.push(
                         context, 
-                        MaterialPageRoute(builder: (context) => Materias())
+                        MaterialPageRoute(builder: (context) => MateriasPage())
                       );
 
                   },
